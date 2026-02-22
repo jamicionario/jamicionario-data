@@ -4,3 +4,6 @@
 
 ## MuseScore files and folders
 .mscbackup
+
+## Folder used to check diffs of files.
+tmp
