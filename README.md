@@ -1,32 +1,76 @@
 
 # Jamicionário data
 
-This repository has the data used in the [Jamicionário](https://jamicionario.github.io).
+This README explains how to contribute to the Jamicionário.
+
+This repository has all the data that is used to build the website.
 
 **Contributions are welcome! ❤️**  
-Fork, edit, and open a pull request to merge your changes back here.  
-They will be published to the Jamicionário, with love.
+To send us your changes, read "[Participating in the Jamicionário](#participating-in-the-jamicionário)" below.  
+We will publish them to the Jamicionário, with love.
 
-In this document:
+---
 
+Contents:
+
+- ["The data" vs "the site"](#the-data-vs-the-site)
+- [Participating in the Jamicionário](#participating-in-the-jamicionário)
 - [Issues](#issues)
   - [Bug reports](#bug-reports)
     - [Template](#template)
   - [Feature requests](#feature-requests)
-- [Contributing](#contributing)
+- [Contributing using git](#contributing-using-git)
   - [As a member of Jamicionário](#as-a-member-of-jamicionário)
   - [As an external contributor](#as-an-external-contributor)
   - [Good commit messages](#good-commit-messages)
-- [First-time setup](#first-time-setup)
+    - [Why?](#why)
+    - [How?](#how)
+- [How to setup git](#how-to-setup-git)
 
 We know it's a lot of text.  
 Read it diagonally, and come back to it as you need. :)
 
+## "The data" vs "the site"
+
+This [git repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories) has all the data used in [the Jamicionário website](https://jamicionario.github.io).  
+There is another repository with [the website's source code](https://github.com/jamicionario/jamicionario.github.io).  
+_This data_ is fed to _that code_ to build the Jamicionário online.
+
+So:
+
+- This repository, [jamicionario-data](https://github.com/jamicionario/jamicionario-data), has the scores: the master data, in MuseScore files (.mscz).
+- The [jamicionario.github.io](https://github.com/jamicionario/jamicionario.github.io) repository has the source code for the website, all the logic and mechanisms. It takes the data from this repository, and presents it as a website.
+
+## Participating in the Jamicionário
+
+If you want to contribute to the Jamicionário, you can send changes, report any issues, or even propose improvements.  
+Just please remember that we are doing this in our spare time. Be patient, be kind. 💙
+
+You can do it by opening an issue, or using git.  
+Either way, we appreciate your participation!
+
+### Using issues
+
+For your first couple of contributions, just open an issue!
+
+Simple, quick — see the next section, "[Issues](#issues)".
+
+### Using git to submit changes
+
+But if you know git or you are a power-user, you can also submit your changes using git.
+
+If you start contributing regularly, it can be better to do it through git.  
+It's not rocket science, but it requires a bit of patience and can be a very frustrating start.  
+We will help, if you want to try, but it's not mandatory.
+
+The section "[Contributing using git](#contributing-using-git)" explains more.
+
 ## Issues
 
-You can use the [Issues](https://github.com/jamicionario/jamicionario-data/issues) page to report issues with the data.
+You can use the [Issues](https://github.com/jamicionario/jamicionario-data/issues) page to report issues with the data, share changes or updates to the data, or even to propose changes.
 
-If they are **issues with the Jamicionário site**, please report them [in the Jamicionário's repository](https://github.com/jamicionario/jamicionario.github.io/issues) instead.
+If they are issues **with the Jamicionário site**, and not with the data...  
+Then please report them [in the Jamicionário's repository](https://github.com/jamicionario/jamicionario.github.io/issues) instead.
 
 When submitting an issue:
 
@@ -60,11 +104,12 @@ Here's a good template for bug reports:
 
 > (Title)
 >
-> (Description, if useful)
+> (Description: a paragraph. In most cases even just an extra line helps.)
 >
 > Steps to reproduce:
 >
 > 1. […]
+> 2. […]
 >
 > Expected result: […]
 >
@@ -73,23 +118,34 @@ Here's a good template for bug reports:
 These fields are really important to provide.  
 You can then include more information that you think can be helpful.
 
+You can attach a screenshot, if it shows the problem it is very useful.  
+Bonus points if you include [freehand circles](https://meta.stackexchange.com/a/19775) in the screenshot!
+
 ### Feature requests
 
 When submitting a feature request, try to outline how you think it would improve the Jamicionário.
 
-Include details you have thought about, and if you know of possible problems or difficulties that is also useful to include.
+Include details you have thought about. If you know of possible problems or difficulties, that is also useful to include.
 
 If you want to be extra helpful, also describe the feature from the point of view of a user!  
 Example:  
 > "As a musician, I would like the whole score to fit on the screen automatically, so that I don't need to zoom or scroll. It is very difficult for musicians to use their hands for handling the scores while playing."
 
-## Contributing
+## Contributing using git
 
-If it is your first time here, first check the section [First-time setup](#first-time-setup) below.
+This section is advanced and goes to the end of the document.  
+If you are not interested, you can skip the rest of the document.
+
+Before doing anything in this section, you should have git installed and have a local clone of the repository. Check the section [How to setup git](#how-to-setup-git) below, if needed.
+
+If you are new to git, [this table of terminology](https://docs.github.com/en/repositories/creating-and-managing-repositories/about-repositories#repository-terminology) may help, to review the meaning of a name quickly as you need it.  
+The names and concepts will become easier over time, as you use them practically.
+
+---
 
 Here is the process for contributing.  
 It is a bit technical but not too difficult — it may feel unfamiliar and a bit arcane, but it is very repetitive and straightforward.  
-We will help if needed.
+We will help if needed — just reach out.
 
 So:
 
@@ -97,7 +153,7 @@ So:
 
 If you are a member of Jamicionário:
 
-- Make a new branch.
+- Make a new branch, and checkout that branch.
 - Do some changes, review and commit.
 - Repeat with more work you want to share.
 - Then make a Pull Request to `main`.
@@ -110,19 +166,19 @@ and we want to add scores for [Béarnaise dances](https://fr.wikipedia.org/wiki/
 We can do that work in a branch named `add-bearnaise-songs`, like so:
 
 1. Checkout the branch "main" with `git checkout main` and do `git pull` to make sure it is up to date.
-2. Create a new branch with `git checkout -b add-bearnaise-songs`.
+2. Create a new branch with `git checkout -b add-bearnaise-songs`, pointing to where we are now (the updated "main").
 3. You are ready and can make your editions to the files.
 4. Review your editions to prepare a commit:
    1. View what has changed with `git status`
-   2. Select new or changed files to be comitted with `git add "Saut Béarnais.mscz` , or do `git add .` to add all files in the current folder.  
-      This is called "staging". These files are stages for commit, and will be included in the commit. Unstaged files will not be included in the commit.
+   2. Select new or changed files to be comitted with `git add "Saut Béarnais.mscz` , or do `git add .` to add all files in the current folder.
+      - This is called "staging". These files are staged for commit, and will be included in the commit. Unstaged files will not be included in the commit.
    3. And make a commit with `git commit`.  
-      If you are using a graphical git tool and commit with nothing staged, it will usually assume you want to commit all pending changes.
+      - If you are using a graphical git tool and commit with nothing staged, it will usually assume you want to commit all pending changes.
    4. You will be asked for a commit message, which you can also provide with `git commit -m "Added score for Saut Béarnais."`.
       1. It's important and useful to have a good commit message.
       2. Check the section [Good commit messages](#good-commit-messages) below.
-5. If you have several changes to do, it's good form to put them in different commits.  
-   This is easier to understand and work with, than a very big changeset.
+5. If you have several changes to do, it's _good form_ to put them in different commits.  
+   - This is easier to understand and work with, than a very big changeset.
 6. When you are done, push your branch with `git push origin`.
 7. Go to the [Pull Requests](https://github.com/jamicionario/jamicionario-data/pulls) page and create a new pull request, from your branch `add-bearnaise-songs` to the branch `main`.
    1. Follow the instructions.
@@ -141,7 +197,7 @@ If you are an external contributor, the process is similar, but:
       https://github.com/m-giacometti/jamicionario-data  
       It is related to the Jamicionário repository, but independent.
 2. Then you follow all the same steps as explained above, 1–6, but on your repository (m-giacometti/jamicionario-data).
-3. And in step 7. the end, when creating the Pull Request, you will target this repository instead of your own.
+3. And in the last step, when creating the Pull Request, you will target this repository instead of your own.
    1. So, where a member of Jamicionário makes a Pull Request from `add-bearnaise-songs` to `main`;
    2. You will do a Pull Request from `m-giacometti/add-bearnaise-songs` to `jamicionario-data/add-bearnaise-songs` .
 4. The rest is the same; except we love you extra. :)
@@ -180,30 +236,38 @@ Good examples, clear and concise:
 
 Bad examples:
 
-- "Fixes issues with some scores." — Which issues? Are they important? Do they maybe affect other scores? Are they well resolved?
+- "Fixes issues with some scores." — Which issues? Are they important? On what scores? Do they maybe affect other scores? Are they well resolved?
 - "added more" — Difficult to know what was done.
 - "Fix Regadinho" — How? What was wrong, or what became better? Could it maybe even be a problem affecting other files?
 
-## First-time setup
+This finished the outline of contributing via git.  
+Reach out with any questions!
 
-If you are new to git, you may want to consider using a graphic client like [GitHub Desktop](https://github.com/apps/desktop).  
+## How to setup git
+
+If you are new to git, you may want to consider using a graphic client like [GitHub Desktop](https://github.com/apps/desktop), [TortoiseGit](https://tortoisegit.org/), etc.  
 The instructions here will be for using the terminal, but a graphical interface helps a lot.
 
 You will need to:
 
-1. Decide if you will use a graphical client or the terminal/command line.
-   A graphical client will install git for you.  
-   Otherwise, you might want to use [git-scm](https://git-scm.com/install). They have detailed instructions for all operating systems.
+1. Install git:
+   - Decide if you will use a graphical client or the terminal/command line.
+   - A graphical client will install git for you.
+   - Otherwise, you might want to use [git-scm](https://git-scm.com/install). They have detailed instructions for all operating systems.
 2. After you install git, first configure your identity:
    1. `git config --global user.name "Michel Giacometti"`
    1. `git config --global user.email "m-giacometti@example.org"`
-3. If you will use git via SSH, you need to set it up in the [SSH keys settings](https://github.com/settings/keys) of your GitHub profile. That page has a link to a guide.
+3. Use HTTPS instead of SSH to be easier.
+   - SSH can be better, but adds some complication to this setup step.
+   - If you will use git via SSH, you need to set it up in the [SSH keys settings](https://github.com/settings/keys) of your GitHub profile. That page has a link to a guide.
 4. Then clone the repository:
    1. Navigate to the folder where you will want it, such as "/users/m-giacometti/code";
    2. And clone the repository:  
       either via SSH: `git clone git@github.com:jamicionario/jamicionario-data.git`  
       or via HTTPS: `git clone https://github.com/jamicionario/jamicionario-data.git`
-5. If you want to contribute and send changes back, you will need to have a github account. [Create one](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) if needed.
+5. If you want to contribute and send changes back, you will need to have a github account.
+   - [Create a GitHub account](https://github.com/signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F&source=header-home) if needed.
+   - Just for getting the data, you don't need an account — is it publicly available.
 
 You should now have a folder "jamicionario-data" with the contents of this repository.  
-Go back and continue reading the section [Contributing](#contributing) from the start.
+Go back and continue reading the section [Contributing using git](#contributing-using-git).
