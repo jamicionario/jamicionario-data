@@ -1,7 +1,6 @@
  <?xml version="1.0" encoding="UTF-8"?>
-    <museScore version="4.50">
+    <museScore version="4.7.4">
       <Style>
-        <voltaLineWidth>0.04</voltaLineWidth>
-        <voltaLineStyle>0</voltaLineStyle>
-      </Style>
+	<voltaLineStyle>solid</voltaLineStyle>      
+     </Style>
     </museScore>
